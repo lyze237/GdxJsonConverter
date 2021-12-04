@@ -1,4 +1,4 @@
-name: "pre-release"
+name: "Build & Release"
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -21,11 +21,12 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew jar
+          ls -a
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{github.run_id}}.${{github.run_number}}"
-          title: "Release ${{github.run_id}}.${{github.run_number}}"
+          automatic_release_tag: "${{github.run_number}}"
+          title: "Release ${{github.run_number}}"
           files: |
             *.jar
