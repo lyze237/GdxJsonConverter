@@ -21,6 +21,7 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew jar
+          mv build/libs/*.jar build/libs/GdxJsonConverter.jar
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
