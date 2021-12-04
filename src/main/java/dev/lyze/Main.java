@@ -3,8 +3,7 @@ package dev.lyze;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.JsonWriter;
-
-import java.io.*;
+import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) {
